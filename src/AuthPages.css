@@ -1,0 +1,419 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.auth-container {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  background-color: #030712;
+  color: #f8fafc;
+  overflow: hidden;
+}
+
+/* Left Panel */
+.auth-left-panel {
+  position: relative;
+  width: 50%;
+  background-color: #040d1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem;
+  border-right: 1px solid #1e293b;
+  overflow: hidden;
+}
+
+.auth-matrix-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+.auth-logo,
+.auth-left-content,
+.auth-left-footer {
+  position: relative;
+  z-index: 2;
+}
+
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.auth-logo-text-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-logo-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.auth-version-sub {
+  font-size: 0.65rem;
+  color: #64748b;
+  letter-spacing: 0.05em;
+  font-family: monospace;
+}
+
+.auth-badge {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  background-color: rgba(6, 182, 212, 0.1);
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  color: #22d3ee;
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.25rem;
+}
+
+.auth-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.auth-desc {
+  color: #94a3b8;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  max-width: 440px;
+  margin-bottom: 2rem;
+}
+
+.auth-bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.auth-bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+}
+
+.auth-bullet-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgba(6, 182, 212, 0.15);
+  color: #22d3ee;
+}
+
+.auth-left-footer {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* Right Panel */
+.auth-right-panel {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background-color: #030712;
+}
+
+.auth-form-wrapper {
+  width: 100%;
+  max-width: 380px;
+}
+
+.auth-form-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.auth-form-subtitle {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.auth-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.auth-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #cbd5e1;
+}
+
+.auth-forgot-link {
+  font-size: 0.75rem;
+  color: #22d3ee;
+  text-decoration: none;
+}
+
+.auth-forgot-link:hover {
+  text-decoration: underline;
+}
+
+.auth-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #0b1528;
+  border: 1px solid #1e293b;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.auth-input:focus {
+  border-color: #06b6d4;
+  box-shadow: 0 0 0 1px #06b6d4;
+}
+
+.auth-eye-btn {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.auth-btn-submit {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background-color: #06b6d4;
+  color: #030712;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.auth-btn-submit:hover {
+  background-color: #22d3ee;
+}
+
+.auth-divider {
+  position: relative;
+  text-align: center;
+  margin: 1.75rem 0 1.25rem;
+}
+
+.auth-divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #1e293b;
+}
+
+.auth-divider span {
+  position: relative;
+  background-color: #030712;
+  padding: 0 0.75rem;
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+.auth-btn-secondary {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: transparent;
+  border: 1px solid #1e293b;
+  color: #cbd5e1;
+  font-weight: 500;
+  font-size: 0.875rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.auth-btn-secondary:hover {
+  border-color: #06b6d4;
+  color: #ffffff;
+}
+
+.auth-contact-footer {
+  margin-top: 2rem;
+  font-size: 0.725rem;
+  color: #475569;
+  text-align: center;
+  line-height: 1.4;
+}
+
+.auth-contact-footer a {
+  color: #22d3ee;
+  text-decoration: none;
+}
+
+/* =========================================================
+   CUSTOM ROLE DROPDOWN STYLES
+   ========================================================= */
+
+/* Dropdown Container */
+.custom-dropdown-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Dropdown Trigger Button (Matches .auth-input) */
+.custom-dropdown-trigger {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #0b1528;
+  border: 1px solid #1e293b;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-size: 0.875rem;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  text-align: left;
+}
+
+/* Hover and Active/Focus State */
+.custom-dropdown-trigger:hover,
+.custom-dropdown-trigger.open {
+  border-color: #06b6d4;
+  box-shadow: 0 0 0 1px #06b6d4;
+}
+
+/* Text styles inside trigger */
+.placeholder-text {
+  color: #64748b;
+}
+
+.selected-text {
+  color: #ffffff;
+}
+
+/* Dropdown Chevron Arrow */
+.dropdown-arrow {
+  color: #06b6d4;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Floating Menu Popup */
+.custom-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: 100%;
+  background-color: #0b1528;
+  border: 1px solid #1e293b;
+  border-radius: 0.5rem;
+  z-index: 50;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.8), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+/* Custom Scrollbar for Menu */
+.custom-dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-dropdown-menu::-webkit-scrollbar-track {
+  background: #0b1528;
+}
+
+.custom-dropdown-menu::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 3px;
+}
+
+.custom-dropdown-menu::-webkit-scrollbar-thumb:hover {
+  background: #06b6d4;
+}
+
+/* Dropdown Option Item */
+.custom-dropdown-item {
+  padding: 0.65rem 1rem;
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Header / Disabled Placeholder in list */
+.custom-dropdown-item.placeholder-item {
+  color: #475569;
+  cursor: default;
+  font-size: 0.8rem;
+  border-bottom: 1px solid #1e293b;
+}
+
+/* Hovering over options */
+.custom-dropdown-item:not(.placeholder-item):hover {
+  background-color: #1e293b;
+  color: #ffffff;
+}
+
+/* Selected active option */
+.custom-dropdown-item.selected {
+  background-color: rgba(6, 182, 212, 0.15);
+  color: #22d3ee;
+  font-weight: 600;
+}
+
+/* Layout support for side-by-side or stacked fields */
+.auth-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+} 

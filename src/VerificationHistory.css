@@ -1,0 +1,245 @@
+/* Container & Headers */
+.history-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 10px 0 40px 0;
+  color: #ffffff;
+}
+
+.history-header {
+  margin-bottom: 24px;
+}
+
+.history-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+}
+
+.history-subtitle {
+  font-size: 0.85rem;
+  color: #7f97b4;
+}
+
+/* Main Card */
+.history-card {
+  background-color: #051124;
+  border: 1px solid #12335c;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.history-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.history-card-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.btn-export-csv {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #09203d;
+  color: #70a6f5;
+  border: 1px solid #1b4372;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-export-csv:hover {
+  background-color: #0d2e57;
+  color: #ffffff;
+  border-color: #2b5d9b;
+}
+
+/* Table Layout */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.8rem;
+}
+
+.history-table th {
+  color: #59789e;
+  font-weight: 600;
+  padding: 12px 14px;
+  border-bottom: 1px solid #102b4d;
+  white-space: nowrap;
+}
+
+.history-table td {
+  padding: 14px;
+  border-bottom: 1px solid #0c223d;
+  vertical-align: middle;
+}
+
+.history-table tbody tr:hover {
+  background-color: #091b33;
+  transition: background-color 0.15s ease-in-out;
+}
+
+/* Cell-Specific Styles */
+.col-id {
+  font-family: monospace;
+  color: #00bcd4;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.file-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #ffffff;
+}
+
+.file-name-cell span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Type Pill Badges */
+.type-badge {
+  display: inline-block;
+  background-color: #0b2749;
+  color: #4ea8de;
+  padding: 3px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Status Pill Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.status-authentic {
+  background-color: #113326;
+  color: #4ade80;
+  border: 1px solid #19533c;
+}
+
+.status-ai {
+  background-color: #36151c;
+  color: #f87171;
+  border: 1px solid #59222c;
+}
+
+.status-pending {
+  background-color: #362711;
+  color: #fbbf24;
+  border: 1px solid #573f1a;
+}
+
+.status-processing {
+  background-color: #0d2a45;
+  color: #38bdf8;
+  border: 1px solid #154673;
+}
+
+/* Confidence */
+.confidence-val {
+  font-weight: 600;
+}
+
+.confidence-val.pass {
+  color: #4ade80;
+}
+
+.confidence-val.fail {
+  color: #f87171;
+}
+
+.confidence-val.empty {
+  color: #4f6a8a;
+}
+
+/* Reporter & Date */
+.text-reporter {
+  color: #c2d5ec;
+}
+
+.text-date {
+  color: #7f97b4;
+  white-space: nowrap;
+}
+
+/* Action Button */
+.btn-action-pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #0b2444;
+  color: #00bcd4;
+  border: 1px solid #164273;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-action-pdf:hover {
+  background-color: #00bcd4;
+  color: #030a16;
+  border-color: #00bcd4;
+}
+
+.btn-action-pdf:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Loading, Error & Empty States */
+.state-message {
+  text-align: center;
+  padding: 40px 0;
+  color: #7f97b4;
+  font-size: 0.85rem;
+}
+
+.state-message.error {
+  color: #f87171;
+}
+
+.spin-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
